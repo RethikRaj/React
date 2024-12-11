@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Elements in React</title>
+</head>
+<body>
+    <h1>I am above root . I will not be replaced</h1>
+    <div id="root">
+        <h1>I AM FROM HTML . I WILL BE REPLACED BY REACT</h1>
+    </div>
+    <h1>I am below root . I will not be replaced</h1>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="./App.js"></script>
+</body>
+</html>
