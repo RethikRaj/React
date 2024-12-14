@@ -109,9 +109,9 @@ How Tree Shaking Works:
 Hot Module Replacement (HMR) is a feature in modern JavaScript bundlers (such as Webpack) that allows you to replace or update modules in a running application without a full page reload. This makes development faster and more efficient because it enables you to see changes immediately while preserving the application state.
 
 How HMR Works:
-Changes in Code: When you modify a module (e.g., a JavaScript file, CSS, etc.), HMR detects the change.
-Update in the Browser: Instead of reloading the entire page, only the updated module is replaced or injected into the running application.
-State Preservation: HMR attempts to keep the application state (such as data or UI state) intact during the update, so you don't lose your progress or need to manually re-enter data.
+- Changes in Code: When you modify a module (e.g., a JavaScript file, CSS, etc.), HMR detects the change.
+- Update in the Browser: Instead of reloading the entire page, only the updated module is replaced or injected into the running application.
+- State Preservation: HMR attempts to keep the application state (such as data or UI state) intact during the update, so you don't lose your progress or need to manually re-enter data.
 
 ## Q: List down your favourite 5 features of Parcel and describe any 3 of them in your own words.
 
@@ -149,4 +149,4 @@ Semantic Versioning format : MAJOR.MINOR.PATCH
 ## Q: script types in html 
 
 type="module":
-Specifies that the script is a JavaScript module, which supports imports and exports.
+- Specifies that the script is a JavaScript module, which supports imports and exports.
