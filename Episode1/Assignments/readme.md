@@ -27,7 +27,7 @@ React :
 
 ReactDOM :
     Purpose: Focuses on rendering React components to the browser’s DOM and managing interactions between React components and the DOM.
-    Function : ReactDOM.render(): This method is used to render React components into the DOM. It takes a React component and a DOM container (e.g., <div id="root"></div>) and renders the component inside it.
+    Function : ReactDOM.render(): This method is used to render React components into the DOM. It takes a React component and a DOM container (e.g., `<div id="root"></div>`) and renders the component inside it.
 
 ## Q: Difference between a `Library and Framework`?
 
