@@ -4,9 +4,7 @@
     border: 1px solid black;
 }
 
-#logo{
-    width: 100px;
-}
+
 
 #logo:hover{
     cursor: pointer;

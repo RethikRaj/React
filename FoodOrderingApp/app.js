@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div id="header">
             <div className="logo-container">
-                <img id="logo" src="https://static.vecteezy.com/system/resources/previews/011/468/885/non_2x/food-logo-spoon-fork-icon-illustration-symbol-for-fast-delivery-app-restaurant-template-free-vector.jpg" alt="logo"/>
+                <img id="logo" src="https://static.vecteezy.com/system/resources/previews/011/468/885/non_2x/food-logo-spoon-fork-icon-illustration-symbol-for-fast-delivery-app-restaurant-template-free-vector.jpg" alt="logo" style={{width : "100px"}}/>
             </div>
             <div className="nav-items">
                 <a href="" className="nav-item">Home</a>
