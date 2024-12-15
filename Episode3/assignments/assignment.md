@@ -5,6 +5,7 @@ Features :
 - JSX lets you embed JavaScript expressions within curly braces {}.These are executed when they are encoutered.
 - JSX is not valid JavaScript. It needs to be transpiled (e.g., by Babel) into React.createElement calls before it can be interpreted by the browser.
 - In JSX, you can have multiple elements, but they must be wrapped in a single parent element or a React.Fragment
+- JSX` is not mandatory but is used for writing better and clean code instead of writing code using `React.CreateElement`.
 
 Flow of JSX : 
 - JSX Transpilation:
