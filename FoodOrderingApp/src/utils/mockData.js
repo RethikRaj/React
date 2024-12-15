@@ -1,44 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-
-
-const Header = () => {
-    return (
-        <div id="header">
-            <div className="logo-container">
-                <img id="logo" src="https://static.vecteezy.com/system/resources/previews/011/468/885/non_2x/food-logo-spoon-fork-icon-illustration-symbol-for-fast-delivery-app-restaurant-template-free-vector.jpg" alt="logo" style={{width : "100px"}}/>
-            </div>
-            <div className="nav-items">
-                <a href="" className="nav-item">Home</a>
-                <a href="" className="nav-item">About</a>
-                <a href="" className="nav-item">Cart</a>
-                <input type="" className="nav-item"  placeholder="Enter any Restaurant or Food" />
-                <span className="nav-item"><svg  viewBox="5 -1 12 25" height="17" width="17" fill="#686b78"><path d="M17.6671481,17.1391632 L22.7253317,22.1973467 L20.9226784,24 L15.7041226,18.7814442 C14.1158488,19.8024478 12.225761,20.3946935 10.1973467,20.3946935 C4.56550765,20.3946935 0,15.8291858 0,10.1973467 C0,4.56550765 4.56550765,0 10.1973467,0 C15.8291858,0 20.3946935,4.56550765 20.3946935,10.1973467 C20.3946935,12.8789625 19.3595949,15.3188181 17.6671481,17.1391632 Z M10.1973467,17.8453568 C14.4212261,17.8453568 17.8453568,14.4212261 17.8453568,10.1973467 C17.8453568,5.97346742 14.4212261,2.54933669 10.1973467,2.54933669 C5.97346742,2.54933669 2.54933669,5.97346742 2.54933669,10.1973467 C2.54933669,14.4212261 5.97346742,17.8453568 10.1973467,17.8453568 Z"></path></svg></span>
-            </div>
-        </div>
-    )
-}
-
-
-const RestaurantCard = (props) =>{
-    // console.log(props);
-    const {resObj} = props; 
-    // console.log(resObj);
-    const {name,cuisines,avgRating,costForTwo,cloudinaryImageId} = resObj?.card.card.info;
-    return (
-        <div className="restaurant-card">
-            <img className="restaurant-image" src= {"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <div>
-                <h3>{name}</h3>
-                <h4>{cuisines.join(", ")}</h4>
-                <h5>{costForTwo}</h5>
-                <p>{avgRating} ⭐</p>
-            </div>
-        </div>
-    )
-}
-
 const restaurantList = [
         {
 "card": {
@@ -1026,43 +985,4 @@ const restaurantList = [
 }
 ];
 
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="restaurant-card-container">
-                {/* {[1,2,3,4,5]} */}
-                
-                {/* // * Why should we provide key property to the child elements - When creating a list in the UI from an array with JSX, you should add a key prop to each child and to any of its' children. React uses the key prop create a relationship between the component and the DOM element. The library uses this relationship to determine whether or not the component should be re-rendered. */}
-                {
-                    restaurantList.map(function(restaurant){
-                        return <RestaurantCard key={restaurant.card.card.info.id} resObj = {restaurant} />
-                    })
-                }
-            </div>
-        </div>
-    )
-}
-
-const Footer = () => {
-    return (
-        <div className="footer">
-            <h4>© {new Date().getFullYear()} My Food Ordering App Limited</h4>
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header/>
-            <Body/>
-            <Footer/>
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout/>);
-
+export default restaurantList;
