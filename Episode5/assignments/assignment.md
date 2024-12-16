@@ -15,12 +15,12 @@ export function sum(x, y) {
   return x + y;
 }
 ```
-**Importing:**
+**Importing:** 
 
 ```js
 // importing (app.js)
 // app.js
-import { a, b, sum } from './module.js';
+import { a, b, sum } from './module.js'; // Curly braces is syntax.
 
 console.log(a);    // 10
 console.log(sum(2, 3));  // 5
@@ -69,3 +69,4 @@ console.log(a);   // 10
 greet();          // Hello!
 
 ```
+
