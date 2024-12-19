@@ -1,5 +1,5 @@
 ## Q.. normal vs async vs defer : 
-    1.https://www.google.com/url?sa=i&url=https%3A%2F%2Fjeetsdev.hashnode.dev%2Fasync-vs-defer-understand-javascript-execution&psig=AOvVaw2RYmeHuu3u0DQCmsYKvqzM&ust=1734066575434000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMiO9cO7oYoDFQAAAAAdAAAAABAE
+    1.[Understanding Async vs Defer](https://jeetsdev.hashnode.dev/async-vs-defer-understand-javascript-execution)
     2. async and defer are boolean attribute
     3. In async : Unordered (depends on which script downloads first) ,but in defer : executes in the order scripts appear in the HTML.
 
