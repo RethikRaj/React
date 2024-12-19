@@ -21,11 +21,11 @@ Cross-Origin Resource Sharing (CORS) is a security feature enforced by web brows
 ```
 
 ## Q: What is difference between `React and ReactDOM`?
-React :
+- React :
     Purpose: React is the core library that provides the foundation for building user interfaces in a declarative way using components.
     Function: It handles the logic for building components, managing state, and rendering UI based on the component's state and props.
 
-ReactDOM :
+- ReactDOM :
     Purpose: Focuses on rendering React components to the browser’s DOM and managing interactions between React components and the DOM.
     Function : ReactDOM.render(): This method is used to render React components into the DOM. It takes a React component and a DOM container (e.g., `<div id="root"></div>`) and renders the component inside it.
 

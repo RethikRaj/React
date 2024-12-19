@@ -22,6 +22,19 @@ npm run <script> - Runs a script defined in package.json.
 
 ## Q. What is the difference between `package.json` and `package-lock.json` files?
 
+## Key Differences Between `package.json` and `package-lock.json`
+
+### Flexibility vs. Stability
+- **`package.json`**: Allows you to define version ranges for flexibility in dependency updates.
+- **`package-lock.json`**: Ensures exact versions are installed for reproducibility and stability and consistency.
+
+### Version Conflicts
+- Without **`package-lock.json`**, sub-dependencies might resolve to different versions on different machines or installations, leading to potential bugs or inconsistencies. (Different developers or machines might resolve to different versions of a dependency without a package-lock.json.)  
+
+### Future Installs
+- If a new version of a dependency is published, **`package-lock.json`** prevents it from being automatically installed, even if it falls within the allowed range specified in **`package.json`**.
+
+
 | Feature          | package.json                               | package-lock.json                                   |
 |------------------|--------------------------------------------|---------------------------------------------------|
 | **Purpose**      | Describes the project and lists dependencies | Locks the exact versions of all dependencies      |
@@ -113,7 +126,7 @@ How HMR Works:
 - Update in the Browser: Instead of reloading the entire page, only the updated module is replaced or injected into the running application.
 - State Preservation: HMR attempts to keep the application state (such as data or UI state) intact during the update, so you don't lose your progress or need to manually re-enter data.
 
-## Q: List down your favourite 5 features of Parcel and describe any 3 of them in your own words.
+## Q: List down features of Parcel ?
 
 ### Parcel features:
 
