@@ -1,7 +1,7 @@
 const ShimmerCard = () => {
     return (
         <div className="shimmer-card">
-            <img className="shimmer-image" src= "null" />
+            <img className="shimmer-image"  />
             <div>
                 <h3></h3>
                 <h4></h4>
