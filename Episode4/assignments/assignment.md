@@ -5,7 +5,6 @@
 - Props are read-only and cannot be modified.
 
 #### Example
-#### Example
 ```sh
 function Greet(props) {
   return <h1>Hello, {props.name}</h1>;
