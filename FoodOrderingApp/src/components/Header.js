@@ -2,11 +2,6 @@ import {LOGO_URL} from "../utils/constants";
 import {use, useState} from "react";
 
 export const Header = () => {
-    // const arr = useState("Login");
-    // const btnText = arr[0];
-    // const setBtnText = arr[1];
-
-    /* Although btnText is */
     const [btnText,setBtnText] = useState("Login");
 
     console.log("Header render happened");
