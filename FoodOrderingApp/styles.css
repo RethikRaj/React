@@ -27,8 +27,16 @@
     color: lightcoral;
 }
 
-.nav-items > a{
+.nav-items > li{
+    list-style-type: none;
     font-size: 24px;
+    color: inherit;
+    
+}
+
+.nav-items > li > a{
+    color: lightcoral;
+    text-decoration: none;
 }
 
 .nav-items > input{
