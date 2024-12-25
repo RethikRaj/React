@@ -1,0 +1,313 @@
+/* Main application container styling */
+.app {
+    display: flex;
+    flex-direction: column; /* Stack Header, Body, and Footer vertically */
+    min-height: 100vh; /* Ensure the app takes full height of the viewport */
+    background-color: #f5f5f5; /* Light gray background for the entire app */
+}
+
+/* Header styling */
+#header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ccc; /* Light border for separation */
+    padding: 10px 0;
+    background-color: white; /* White background for header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Logo hover effect */
+#logo:hover {
+    cursor: pointer;
+}
+
+/* Navigation items */
+.nav-items {
+    display: flex;
+}
+
+/* Individual navigation item style */
+.nav-item {
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #ff6b6b; /* Light coral color for nav items */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+/* Navigation list */
+.nav-items > li {
+    list-style-type: none;
+    font-size: 20px; /* Reduced font size for better readability */
+    color: inherit;
+}
+
+/* Navigation links */
+.nav-items > li > a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for hover */
+}
+
+.nav-items > li > a:hover {
+    color: #ff3d3d; /* Darker coral on hover */
+}
+
+/* Input and button styling in nav */
+.nav-items > input {
+    color: #333; /* Darker text color for better readability */
+    width: 200px;
+    height: 35px; /* Increased height for better usability */
+    border: 1px solid #ccc; /* Light border for input */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding for input */
+}
+
+.nav-items > button {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border for button */
+    background-color: #ff6b6b; /* Button color */
+    cursor: pointer;
+    height: 40px;
+    width: 120px; /* Increased width for readability */
+    color: white;
+    font-size: 18px; /* Slightly smaller font size */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, border 0.3s; /* Smooth transition */
+}
+
+.nav-items > button:hover {
+    background-color: #ff3d3d; /* Darker coral on hover */
+    border: 1px solid #ff3d3d; /* Darker border on hover */
+}
+
+/* Body styling */
+.body {
+    margin: 20px;
+    padding: 0 50px; /* Reduced padding for responsiveness */
+    flex: 1;
+    background-color: white; /* White background for body */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Restaurant card container */
+.restaurant-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual restaurant card */
+.restaurant-card {
+    width: 300px;
+    height: 500px;
+    background-color: #f0f0f0; /* Light gray for cards */
+    padding: 10px;
+    margin: 15px; /* Increased margin for better spacing */
+    border-radius: 8px; /* Rounded corners for cards */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+/* Hover effect for restaurant card */
+.restaurant-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* Restaurant image styling */
+.restaurant-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Link for restaurant card */
+.restaurant-card-link {
+    text-decoration: none; /* Remove underline */
+    color: firebrick;
+}
+
+/* Filter container */
+.filter-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    margin: 20px; /* Space between filter and cards */
+    margin-left: 170px;
+}
+
+/* Filter button */
+.filter-top-rated-restaurants-btn {
+    border: 1px solid #ccc; /* Light border */
+    padding: 10px;
+    cursor: pointer;
+    width: 220px; /* Increased button width */
+    height: 60px;
+    background-color: #ff6b6b; /* Coral background */
+    color: white;
+    font-size: 18px; /* Slightly smaller font size */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, border 0.3s; /* Smooth transition */
+}
+
+.filter-top-rated-restaurants-btn:hover {
+    background-color: #ff3d3d; /* Darker color on hover */
+    border: 1px solid #ff3d3d; /* Darker border on hover */
+}
+
+/* Search box styling */
+.search-box {
+    margin-left: 20px; /* Space between filter button and search box */
+    display: flex;
+    align-items: center; /* Center align items */
+}
+
+.search-box > input {
+    height: 35px; /* Increased height for better usability */
+    border: 1px solid #ccc; /* Light border for input */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding for input */
+    width: 450px;
+}
+
+/* SVG icon in search box */
+.search-box > svg {
+    cursor: pointer;
+    margin-left: 10px; /* Space between input and icon */
+}
+
+/* Footer styling */
+.footer {
+    border-top: 2px solid #ccc; /* Light border for separation */
+    padding: 20px 0; /* Top and bottom padding */
+    display: flex;
+    justify-content: center;
+    background-color: white; /* White background for footer */
+}
+
+/* Copyright text */
+.copyright {
+    margin-top: 10px; /* Space above copyright text */
+}
+
+/* Shimmer card styles */
+/* Shimmer card styles */
+.shimmer-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0; /* Margin for spacing around shimmer cards */
+}
+
+/* Individual shimmer card */
+.shimmer-card {
+    width: 300px; /* Fixed width for cards */
+    background-color: #f0f0f0; /* Light gray background for shimmer cards */
+    padding: 20px; /* Increased padding for better spacing */
+    margin: 15px; /* Increased margin for better spacing */
+    border-radius: 8px; /* Rounded corners for shimmer cards */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for effect */
+    height: 400px; /* Increased height for shimmer cards */
+}
+
+/* Shimmer effect */
+.shimmer-card .shimmer-image,
+.shimmer-card h3,
+.shimmer-card h4,
+.shimmer-card h5,
+.shimmer-card p {
+    background-color: #e0e0e0; /* Light gray color for shimmer effect */
+    position: relative;
+    border-radius: 4px; /* Rounded corners for shimmer elements */
+    overflow: hidden;
+}
+
+/* Shimmer image */
+.shimmer-image {
+    width: 100%;
+    height: 250px; /* Increased height for shimmer image */
+    object-fit: cover;
+    border-radius: 8px; /* Match card's rounded corners */
+}
+
+/* Shimmer text styles */
+.shimmer-card h3,
+.shimmer-card h4,
+.shimmer-card h5,
+.shimmer-card p {
+    height: 20px; /* Increased height for text elements */
+    margin: 10px 0; /* Increased margin for spacing */
+    border-radius: 4px; /* Rounded corners for text */
+}
+
+/* Specific widths for different header levels */
+.shimmer-card h3 {
+    width: 90%; /* Wider for main title */
+}
+
+.shimmer-card h4 {
+    width: 80%; /* Slightly narrower for sub-title */
+}
+
+.shimmer-card h5 {
+    width: 85%; /* Similar to h4 */
+}
+
+.shimmer-card p {
+    width: 70%; /* Paragraph width */
+}
+
+/* Shimmer animation effect */
+.shimmer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for shimmer animation */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .body {
+        padding: 0 20px; /* Reduce padding on smaller screens */
+    }
+
+    .restaurant-card-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center align cards */
+    }
+
+    .restaurant-card {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px 0; /* Vertical margin */
+    }
+
+    .filter-container {
+        flex-direction: column; /* Stack filter items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .filter-top-rated-restaurants-btn,
+    .search-box > input {
+        width: 100%; /* Full width for filter button and input */
+    }
+}
