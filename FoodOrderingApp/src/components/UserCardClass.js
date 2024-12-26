@@ -1,4 +1,5 @@
 import React from "react";
+import { GITHUB_USER_API } from "../utils/constants";
 
 class UserCardClass extends React.Component{
     constructor(props){
@@ -13,7 +14,7 @@ class UserCardClass extends React.Component{
         console.log("Child Component Did Mount");
 
         try{
-            const data = await fetch("https://api.github.com/users/"+this.props.userName)
+            const data = await fetch(GITHUB_USER_API+this.props.userName)
 
             const json = await data.json();
 
