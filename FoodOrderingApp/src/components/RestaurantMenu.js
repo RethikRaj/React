@@ -38,7 +38,7 @@ const RestaurantMenu = () =>{
             <div className="RestaurantMenu">
                 <h1>{name}</h1>
                 <div>
-                    <p>{`${avgRating} (${totalRatings/1000}k+ ratings)  --- ₹${costForTwo} for Two`}</p>
+                    <p>{`${avgRating} (${totalRatings/1000}k+ ratings)  --- ₹${costForTwo/100} for Two`}</p>
                     <p>{cuisines.join(", ")}</p>
                 </div>
                 <h2>Menu :</h2>

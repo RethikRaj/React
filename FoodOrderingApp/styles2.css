@@ -311,3 +311,16 @@
         width: 100%; /* Full width for filter button and input */
     }
 }
+
+
+
+/* Me adding  */
+.user-card{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.count-container{
+    display: flex;
+}
