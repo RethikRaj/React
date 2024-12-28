@@ -5,46 +5,13 @@ import ShimmerCard from "./ShimmerCard";
 import {Link} from "react-router-dom";
 import {SVG_PATH_D_ATTRIBUTE} from "../utils/constants.js";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+import useListOfRestaurants from "../utils/useListOfRestaurants.js";
 
 
 const Body = () => {
-    // Local State Variable => When the state variable updates React will re-render the component.
-    // let arr = useState(restaurantList);
-    // let listOfRestaurants = arr[0];
-    // let setListOfRestaurants = arr[1];
-    
-    const [listOfRestaurants, setListOfRestaurants] = useState([]);
-    const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState([]);
+    const {listOfRestaurants,setListOfRestaurants,filteredListOfRestaurants,setFilteredListOfRestaurants} = useListOfRestaurants();
     const [inputValue,setInputValue] = useState("");
-
     const onlineStatus = useOnlineStatus();
-    
-    // Normal JS variable => Updating this variable do not change my UI
-    // let listOfRestaurantsJS = restaurantList;
-
-
-    //useEffect hook
-    useEffect(()=>{
-        fetchData();
-    },[]);
-
-    const fetchData = async () =>{
-        try{
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
-
-            const jsonData = await data.json();
-
-            console.log(jsonData.data.cards.splice(0,3));
-
-            setListOfRestaurants(jsonData?.data?.cards);
-
-            setFilteredListOfRestaurants(jsonData?.data?.cards);
-
-
-        }catch(err){
-            console.error(err.message);
-        }   
-    }
 
     // Conditional Rendering : Rendering based on some condition
 
@@ -54,8 +21,6 @@ const Body = () => {
             <h1>Looks Like You are Offline . Please check your internet connection.</h1>
         )
     }
-    
-
     
     // Ternary Operator 
     return filteredListOfRestaurants.length === 0 ? 
