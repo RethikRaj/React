@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import ShimmerCard from "./ShimmerCard";
 import {Link} from "react-router-dom";
 import {SVG_PATH_D_ATTRIBUTE} from "../utils/constants.js";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 
 const Body = () => {
@@ -16,7 +17,7 @@ const Body = () => {
     const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState([]);
     const [inputValue,setInputValue] = useState("");
 
-    console.log("Body rendered");
+    const onlineStatus = useOnlineStatus();
     
     // Normal JS variable => Updating this variable do not change my UI
     // let listOfRestaurantsJS = restaurantList;
@@ -48,20 +49,12 @@ const Body = () => {
     // Conditional Rendering : Rendering based on some condition
 
     // Early Return
-    // if (listOfRestaurants.length === 0) {
-    //     return (
-    //         <div className="shimmer-card-container">
-    //             <ShimmerCard />
-    //             <Shimmer Card />
-    //             <Shimmer Card />
-    //             <Shimmer Card />
-    //             <Shimmer Card />
-    //             <Shimmer Card />
-    //             <Shimmer Card />
-    //             <Shimmer Card />
-    //         </div>
-    //     );
-    // }
+    if(onlineStatus === false){
+        return (
+            <h1>Looks Like You are Offline . Please check your internet connection.</h1>
+        )
+    }
+    
 
     
     // Ternary Operator 
