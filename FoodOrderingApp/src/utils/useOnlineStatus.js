@@ -5,13 +5,17 @@ const useOnlineStatus = ()=>{
 
     // Since event Listeners needs to be attached only on initial render therefore we use the hook useEffect.
     useEffect(()=>{
-        window.addEventListener('offline',()=>{
-            setOnlineStatus(false);
-        })
+        const handleOffline = () => setOnlineStatus(false);
+        const handleOnline = () => setOnlineStatus(true);
 
-        window.addEventListener('online',()=>{
-            setOnlineStatus(true);
-        })
+        window.addEventListener('offline',handleOffline);
+
+        window.addEventListener('online',handleOnline);
+
+        return () =>{
+            window.removeEventListener("offline",handleOffline);
+            window.removeEventListener("online",handleOnline);
+        }
 
     },[]);
 
