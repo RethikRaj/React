@@ -29,8 +29,8 @@ const RestaurantItemCategory = ({categoryDetails}) => {
 export const withNestedItemCategory = (RestaurantItemCategory)=>{
     return ({nestedcategoryDetails})=>{
         return (
-            <div className="border-b-8 border-gray-400">
-                <h1 className="font-extrabold">{nestedcategoryDetails.title}</h1>
+            <div>
+                <h1 className="font-semibold text-2xl">{nestedcategoryDetails.title}</h1>
                 {nestedcategoryDetails.categories.map((category)=>{
                     return <RestaurantItemCategory key={category?.title} categoryDetails = {category}/>
                 })}

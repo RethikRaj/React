@@ -1,4 +1,4 @@
-import ShimmerCard from "./ShimmerCard";
+import RestaurantItemShimmer from "./RestaurantItemShimmer";
 import {useParams} from "react-router-dom";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import RestaurantItemCategory from "./RestaurantItemCategory";
@@ -13,13 +13,13 @@ const RestaurantMenu = () =>{
 
     if(restaurantDetails === null){
         return  (
-            <div className="shimmer-card-container">
-                <ShimmerCard/>
-                <ShimmerCard/>
-                <ShimmerCard/>
-                <ShimmerCard/>
-                <ShimmerCard/>
-                <ShimmerCard/>
+            <div className="flex flex-col items-center">
+                <RestaurantItemShimmer/>
+                <RestaurantItemShimmer/>
+                <RestaurantItemShimmer/>
+                <RestaurantItemShimmer/>
+                <RestaurantItemShimmer/>
+                <RestaurantItemShimmer/>
             </div>
         )
     }
@@ -40,8 +40,14 @@ const RestaurantMenu = () =>{
                 </div>
                 <div className="w-7/12 m-4 p-2"> 
                     {categories.map((category)=>{
-                        return category?.card?.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ?<RestaurantItemCategory key={category?.card?.card?.title} categoryDetails = {category?.card?.card} /> :
-                        <RestaurantNestedItemCategory key={category?.card?.card?.title} nestedcategoryDetails={category?.card?.card} />
+                        return category?.card?.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ?
+                        <div className="border-b-8 border-gray-300">
+                            <RestaurantItemCategory key={category?.card?.card?.title} categoryDetails = {category?.card?.card} />
+                        </div> 
+                        :
+                        <div className="border-b-8 border-gray-300">
+                            <RestaurantNestedItemCategory key={category?.card?.card?.title} nestedcategoryDetails={category?.card?.card} />
+                        </div>
                     })}
                 </div>
             </div>
