@@ -69,7 +69,10 @@ const Body = () => {
                         const {id} = restaurant.card.card.info;
                         return (
                             <Link key={id} to={`/restaurants/${id}`}>
-                                {restaurant.card.card.info.promoted ? <PromotedRestaurantCard resObj = {restaurant}/> : <RestaurantCard  resObj = {restaurant} />}
+                                {restaurant.card.card.info.promoted ? 
+                                <PromotedRestaurantCard resObj = {restaurant}/> : 
+                                <RestaurantCard  resObj = {restaurant} />
+                                }
                             </Link>
                         )
                     })

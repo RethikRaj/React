@@ -1,11 +1,15 @@
 import ShimmerCard from "./ShimmerCard";
 import {useParams} from "react-router-dom";
-import useRestaurantMenu from "../utils/useRestaurantMenu";
+import useRestaurantDetails from "../utils/useRestaurantDetails";
+import RestaurantItemCategory from "./RestaurantItemCategory";
+import { withNestedItemCategory } from "./RestaurantItemCategory";
 
 const RestaurantMenu = () =>{
     const {resId} = useParams();
 
-    const restaurantDetails = useRestaurantMenu(resId);
+    const restaurantDetails = useRestaurantDetails(resId);
+
+    const RestaurantNestedItemCategory = withNestedItemCategory(RestaurantItemCategory);
 
     if(restaurantDetails === null){
         return  (
@@ -21,39 +25,27 @@ const RestaurantMenu = () =>{
     }
     else{
         const {id,name,cuisines,costForTwo,avgRating,totalRatings} = restaurantDetails?.data?.cards[2]?.card?.card?.info;
-        const menuDetails = restaurantDetails?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-        menuDetails.splice(0,1);
-        console.log(menuDetails);
+        const categories = restaurantDetails?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item)=>{
+            return item.card.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" || item.card.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+        })
+
+        
         
         return (
-            <div className="RestaurantMenu">
-                <h1>{name}</h1>
-                <div>
-                    <p>{`${avgRating} (${totalRatings/1000}k+ ratings)  --- ₹${costForTwo/100} for Two`}</p>
-                    <p>{cuisines.join(", ")}</p>
+            <div className="flex flex-col items-center ">
+                <div className="border-2 border-black w-7/12 p-4 rounded-lg shadow-lg">
+                    <h1 className="font-bold text-2xl">{name}</h1>
+                    <p className="font-semibold text-lg">{`⭐${avgRating} (${totalRatings} ratings) - ₹${costForTwo/100} for two`} </p>
+                    <p className="font-semibold text-md text-orange-500 underline">{cuisines.join(", ")}</p>
                 </div>
-                <h2>Menu :</h2>
-                <div className="menu-container">
-                    {menuDetails.map((menu)=>{
-                        const {title,itemCards} = menu?.card?.card;
-                        
-                        if(title !== undefined && itemCards !== undefined){
-                            return  (
-                                <div>
-                                    <h2>{title} : </h2>
-                                    {
-                                        itemCards.map((menuItem)=>{
-                                            const {name,id,price} = menuItem?.card?.info;
-                                            return <li key={id}> {`${name} - ₹${price/100}`}</li>
-                                        })
-                                    }
-
-                                </div>
-                            )
-                        }
+                <div className="w-7/12 m-4 p-2"> 
+                    {categories.map((category)=>{
+                        return category?.card?.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ?<RestaurantItemCategory key={category?.card?.card?.title} categoryDetails = {category?.card?.card} /> :
+                        <RestaurantNestedItemCategory key={category?.card?.card?.title} nestedcategoryDetails={category?.card?.card} />
                     })}
                 </div>
             </div>
+           
         )
     }
     
@@ -61,3 +53,5 @@ const RestaurantMenu = () =>{
 }
 
 export default RestaurantMenu;
+
+//
