@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard , {withPromotedLabel} from "./RestaurantCard";
 // import restaurantList from "../utils/mockData";
 import {useState, useEffect} from "react";
 import ShimmerCard from "./ShimmerCard";
@@ -12,6 +12,8 @@ const Body = () => {
     const {listOfRestaurants,setListOfRestaurants,filteredListOfRestaurants,setFilteredListOfRestaurants} = useListOfRestaurants();
     const [inputValue,setInputValue] = useState("");
     const onlineStatus = useOnlineStatus();
+
+    const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
 
     // Conditional Rendering : Rendering based on some condition
 
@@ -67,7 +69,7 @@ const Body = () => {
                         const {id} = restaurant.card.card.info;
                         return (
                             <Link key={id} to={`/restaurants/${id}`}>
-                                <RestaurantCard  resObj = {restaurant} />
+                                {restaurant.card.card.info.promoted ? <PromotedRestaurantCard resObj = {restaurant}/> : <RestaurantCard  resObj = {restaurant} />}
                             </Link>
                         )
                     })
