@@ -44,7 +44,7 @@ class UserCardClass extends React.Component{
 
         const {name,location} = this.state.userInfo;
         return (
-            <div className="user-card"> 
+            <div className="border-2 border-[#ccc] p-4 m-2 rounded-lg"> 
                 <h1>Name : {name}</h1>
                 <h2>Location : {location}</h2>
             </div>

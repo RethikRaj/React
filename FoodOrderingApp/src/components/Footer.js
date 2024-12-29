@@ -2,9 +2,9 @@ import { LOGO_URL } from "../utils/constants";
 
 const Footer = () => {
     return (
-        <div className="footer">
-            <img id="logo" src={LOGO_URL} alt="logo" style={{width : "100px"}}/>
-            <h4 className="copyright">© {new Date().getFullYear()} My Food Ordering App Limited</h4>
+        <div className="flex justify-center items-center bg-white m-2 rounded-lg border-2 border-[#ccc]">
+            <img className="hover:cursor-pointer w-24" src={LOGO_URL} alt="logo" />
+            <h4>© {new Date().getFullYear()} My Food Ordering App Limited</h4>
         </div>
     )
 }

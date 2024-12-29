@@ -25,7 +25,7 @@ const Body = () => {
     // Ternary Operator 
     return filteredListOfRestaurants.length === 0 ? 
      (
-            <div className="shimmer-card-container">
+            <div className="flex flex-wrap items-center justify-center">
                 <ShimmerCard />
                 <ShimmerCard />
                 <ShimmerCard />
@@ -38,18 +38,18 @@ const Body = () => {
     ) 
     :
     (
-        <div className="body">
-            <div className="filter-container">
-                <button className="filter-top-rated-restaurants-btn" onClick={() => {
+        <div className="flex-1 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.1)] m-3 px-10 rounded-lg">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 p-4">
+                <button className="border border-gray-300 px-6 py-3 w-56 sm:w-72 bg-red-500 text-white text-lg rounded-md shadow-md hover:bg-red-600 hover:border-red-600 focus:outline-none focus:ring focus:ring-red-300 transition duration-300 ease-in-out" onClick={() => {
                         const filteredList = listOfRestaurants.filter((restaurant)=> restaurant.card.card.info.avgRating > 4);
                         setFilteredListOfRestaurants(filteredList);
                     }}>
                         Show Top Rated Restaurants
                 </button>
-                <div className="search-box">
-                    <input type="text"  placeholder="Enter any Restaurant or Food" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}/>
+                <div className="flex items-center">
+                    <input type="text"  placeholder="Enter any Restaurant or Food" value={inputValue} className="w-full sm:w-96 p-3 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out" onChange={(e)=>{setInputValue(e.target.value)}}/>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 128 128" 
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 128 128" className="cursor-pointer"
                     onClick={()=>{
                         const filteredList = listOfRestaurants.filter((restaurant)=>{return restaurant.card.card.info.name.toLowerCase().includes(inputValue.toLowerCase())});
                         setFilteredListOfRestaurants(filteredList);
@@ -61,12 +61,12 @@ const Body = () => {
                 
             </div>
             
-            <div className="restaurant-card-container">
+            <div className="flex flex-wrap justify-center">
                 {
                     filteredListOfRestaurants.map(function(restaurant){
                         const {id} = restaurant.card.card.info;
                         return (
-                            <Link key={id} to={`/restaurants/${id}`} className="restaurant-card-link">
+                            <Link key={id} to={`/restaurants/${id}`}>
                                 <RestaurantCard  resObj = {restaurant} />
                             </Link>
                         )

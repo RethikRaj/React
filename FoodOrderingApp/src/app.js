@@ -14,7 +14,7 @@ const Grocery = lazy(()=>{return import("./components/Grocery")});
 
 const AppLayout = () => {
     return (
-        <div className="app">
+        <div className="flex flex-col min-h-screen bg-[#f5f5f5]">
             <Header/>
             <Outlet/>
             <Footer/>
