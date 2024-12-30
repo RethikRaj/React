@@ -1,13 +1,11 @@
 import { useState } from "react";
 import RestaurantItemCard from "./RestaurantItemCard";
 
-const RestaurantItemCategory = ({categoryDetails}) => {
-    const [showItems,setShowItems] = useState(false);
-    const [arrow,setArrow] = useState('▽');
+const RestaurantItemCategory = ({categoryDetails,showItems,setShowItems,arrow}) => {
+    console.log("Hello");
     
     const handleClick = ()=>{
-        setShowItems(!showItems);
-        setArrow(arrow === '▽' ? '△' : '▽');
+        setShowItems();
     }
 
     return (

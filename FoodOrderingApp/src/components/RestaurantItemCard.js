@@ -1,7 +1,6 @@
 import { CDN_RESTAURANT_ITEM_URL } from "../utils/constants";
 
 const RestaurantItemCard = ({itemDetails}) =>{
-    console.log(itemDetails);
     return (
         <div className="flex m-2 p-2 border-b-2 border-gray-400">
             <div className="w-9/12 px-4">
