@@ -2,14 +2,13 @@ import RestaurantItemShimmer from "./RestaurantItemShimmer";
 import {useParams} from "react-router-dom";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import RestaurantItemCategory from "./RestaurantItemCategory";
-import { withNestedItemCategory } from "./RestaurantItemCategory";
+import RestaurantNestedItemCategory from "./RestaurantNesteditemCategory";
 
 const RestaurantMenu = () =>{
     const {resId} = useParams();
 
     const restaurantDetails = useRestaurantDetails(resId);
 
-    const RestaurantNestedItemCategory = withNestedItemCategory(RestaurantItemCategory);
 
     if(restaurantDetails === null){
         return  (
@@ -41,12 +40,12 @@ const RestaurantMenu = () =>{
                 <div className="w-7/12 m-4 p-2"> 
                     {categories.map((category)=>{
                         return category?.card?.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ?
-                        <div className="border-b-8 border-gray-300">
-                            <RestaurantItemCategory key={category?.card?.card?.title} categoryDetails = {category?.card?.card} />
+                        <div key={category?.card?.card?.title} className="border-b-8 border-gray-300">
+                            <RestaurantItemCategory  categoryDetails = {category?.card?.card}/>
                         </div> 
                         :
-                        <div className="border-b-8 border-gray-300">
-                            <RestaurantNestedItemCategory key={category?.card?.card?.title} nestedcategoryDetails={category?.card?.card} />
+                        <div key={category?.card?.card?.title} className="border-b-8 border-gray-300">
+                            <RestaurantNestedItemCategory  nestedcategoryDetails={category?.card?.card}/>
                         </div>
                     })}
                 </div>

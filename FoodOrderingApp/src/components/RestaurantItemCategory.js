@@ -2,7 +2,6 @@ import { useState } from "react";
 import RestaurantItemCard from "./RestaurantItemCard";
 
 const RestaurantItemCategory = ({categoryDetails}) => {
-    console.log(categoryDetails);
     const [showItems,setShowItems] = useState(false);
     const [arrow,setArrow] = useState('▽');
     
@@ -24,19 +23,6 @@ const RestaurantItemCategory = ({categoryDetails}) => {
             </div>
         </div>
     )
-}
-
-export const withNestedItemCategory = (RestaurantItemCategory)=>{
-    return ({nestedcategoryDetails})=>{
-        return (
-            <div>
-                <h1 className="font-semibold text-2xl">{nestedcategoryDetails.title}</h1>
-                {nestedcategoryDetails.categories.map((category)=>{
-                    return <RestaurantItemCategory key={category?.title} categoryDetails = {category}/>
-                })}
-            </div>
-        )
-    }
 }
 
 export default RestaurantItemCategory;
