@@ -1,6 +1,7 @@
 import UserCard from "./UserCard";
 import UserCardClass from "./UserCardClass";
-import { Component } from "react";
+import { Component, useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 class AboutUsClass extends Component{
     constructor(props){
@@ -21,6 +22,11 @@ class AboutUsClass extends Component{
                 <h3>This is a Food Ordering App </h3>
                 <UserCardClass userName = {"RethikRaj"}/>
                 <UserCardClass userName = {"akshaymarch7"}/>
+
+                {/* Just for demonstrating how to read context inside a class component */}
+                <UserContext.Consumer>
+                    {(userData)=>{return <h1 className="font-bold m-2">loggedInUser : {userData.loggedInUser}</h1>}}
+                </UserContext.Consumer>
             </div>
         )
     }

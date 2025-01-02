@@ -1,12 +1,16 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 
 export const Header = () => {
     const [btnText, setBtnText] = useState("Login");
     const onlineStatus = useOnlineStatus();
 
+    const userData = useContext(UserContext);
+    
     return (
         <div className="flex justify-between sm:justify-around bg-[white] shadow-[0_2px_5px_rgba(0,0,0,0.1)] px-4 py-2.5 border-b-2 border-b-[#ccc] border-solid m-2 rounded-lg">
             <div className="logo-container">
@@ -28,6 +32,7 @@ export const Header = () => {
                 }}>
                     {btnText}
                 </button>
+                <li className="mx-2 sm:mx-4 font-bold text-[#ff6b6b] list-none">{userData.loggedInUser}</li>
             </div>
         </div>
     );

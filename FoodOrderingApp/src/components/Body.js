@@ -1,11 +1,12 @@
 import RestaurantCard , {withPromotedLabel} from "./RestaurantCard";
 // import restaurantList from "../utils/mockData";
-import {useState, useEffect} from "react";
+import {useState, useEffect,useContext} from "react";
 import ShimmerCard from "./ShimmerCard";
 import {Link} from "react-router-dom";
 import {SVG_PATH_D_ATTRIBUTE} from "../utils/constants.js";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import useListOfRestaurants from "../utils/useListOfRestaurants.js";
+import UserContext from "../utils/UserContext.js";
 
 
 const Body = () => {
@@ -14,6 +15,8 @@ const Body = () => {
     const onlineStatus = useOnlineStatus();
 
     const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
+
+    const {loggedInUser, setUserName} = useContext(UserContext);
 
     // Conditional Rendering : Rendering based on some condition
 
@@ -59,6 +62,10 @@ const Body = () => {
                     <path d={SVG_PATH_D_ATTRIBUTE}>
                     </path>
                     </svg>
+                </div>
+                <div className="flex items-center">
+                    <label>UserName : </label>
+                    <input className="border-2 border-black m-2 p-2" type="text" placeholder="Enter user name" value={loggedInUser} onChange={(e)=>{setUserName(e.target.value)}}></input>
                 </div>
                 
             </div>
