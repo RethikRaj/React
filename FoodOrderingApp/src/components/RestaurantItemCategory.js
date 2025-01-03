@@ -2,7 +2,6 @@ import { useState } from "react";
 import RestaurantItemCard from "./RestaurantItemCard";
 
 const RestaurantItemCategory = ({categoryDetails,showItems,setShowItems,arrow}) => {
-    console.log("Hello");
     
     const handleClick = ()=>{
         setShowItems();
