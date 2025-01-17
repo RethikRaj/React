@@ -1,0 +1,83 @@
+{
+    "card": {
+        "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+            "info": {
+                "id": "860753",
+                "name": "Thalassery Restaurant",
+                "cloudinaryImageId": "FOOD_CATALOG/IMAGES/CMS/2024/7/5/d65d244d-ec62-483e-b6e7-e7db4d2625b0_53457461-7068-48b3-aa48-bd6d5199b0f0.jpg",
+                "locality": "Egattur",
+                "areaName": "OMR Navalur",
+                "costForTwo": "₹300 for two",
+                "cuisines": [
+                    "Indian"
+                ],
+                "avgRating": 4.3,
+                "parentId": "14391",
+                "avgRatingString": "4.3",
+                "totalRatingsString": "1.0K+",
+                "promoted": true,
+                "adTrackingId": "cid=24063429~p=0~adgrpid=24063429#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=860753~eid=90b32802-5aca-43b8-8635-30ee6a0285f1~srvts=1737098069590~collid=83639",
+                "sla": {
+                    "deliveryTime": 37,
+                    "lastMileTravel": 8.7,
+                    "serviceability": "SERVICEABLE",
+                    "slaString": "35-40 mins",
+                    "lastMileTravelString": "8.7 km",
+                    "iconType": "ICON_TYPE_EMPTY"
+                },
+                "availability": {
+                    "nextCloseTime": "2025-01-17 23:00:00",
+                    "opened": true
+                },
+                "badges": {},
+                "isOpen": true,
+                "aggregatedDiscountInfoV2": {},
+                "type": "F",
+                "badgesV2": {
+                    "entityBadges": {
+                        "textBased": {},
+                        "imageBased": {},
+                        "textExtendedBadges": {}
+                    }
+                },
+                "orderabilityCommunication": {
+                    "title": {},
+                    "subTitle": {},
+                    "message": {},
+                    "customIcon": {},
+                    "commsStyling": {}
+                },
+                "differentiatedUi": {
+                    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                    "differentiatedUiMediaDetails": {
+                        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                        "lottie": {},
+                        "video": {}
+                    }
+                },
+                "reviewsSummary": {},
+                "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                "restaurantOfferPresentationInfo": {},
+                "externalRatings": {
+                    "aggregatedRating": {
+                        "rating": "--"
+                    }
+                },
+                "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+                "campaignId": "24063429"
+            },
+            "analytics": {},
+            "cta": {
+                "link": "swiggy://menu?restaurant_id=860753&source=collection&query=Biryani",
+                "text": "RESTAURANT_MENU",
+                "type": "DEEPLINK"
+            },
+            "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+        },
+        "relevance": {
+            "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
+            "sectionId": "MENU_RETURN_FOOD"
+        }
+    }
+}
