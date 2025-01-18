@@ -3,6 +3,22 @@ import ContactUs from "../ContactUs"
 import "@testing-library/jest-dom"
 
 describe("Contact Us page Test Cases",()=>{
+    // These 4 functions can be used to run before or after each test case . We can use it inside a describe block or just outside too.
+    beforeAll(()=>{
+        console.log("beforeAll");
+    })
+
+    beforeEach(()=>{
+        console.log("beforeEach");
+    })
+
+    afterAll(()=>{
+        console.log("afterAll");
+    })
+
+    afterEach(()=>{
+        console.log("afterEach");
+    })
 
     test("Should load contactUs component",()=>{
         render(<ContactUs/>);
