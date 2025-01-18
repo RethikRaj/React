@@ -58,7 +58,7 @@ const Body = () => {
                     onClick={()=>{
                         const filteredList = listOfRestaurants.filter((restaurant)=>{return restaurant.card.card.info.name.toLowerCase().includes(inputValue.toLowerCase())});
                         setFilteredListOfRestaurants(filteredList);
-                    }}>
+                    }} data-testid = "search-icon">
                     <path d={SVG_PATH_D_ATTRIBUTE}>
                     </path>
                     </svg>

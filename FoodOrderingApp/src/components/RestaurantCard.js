@@ -5,7 +5,7 @@ const RestaurantCard = (props) =>{
     const {name,cuisines,avgRating,costForTwo,cloudinaryImageId} = resObj?.card?.card?.info;
     
     return (
-        <div className="restaurant-card w-72 md:w-80 h-auto bg-gray-100 p-4 m-4 rounded-lg transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+        <div data-testid="resCard" className="restaurant-card w-72 md:w-80 h-auto bg-gray-100 p-4 m-4 rounded-lg transition-transform transform hover:-translate-y-1 hover:shadow-lg">
             <div className="w-full h-60 overflow-hidden rounded-lg">
                 <img 
                     className="restaurant-image w-full h-full object-cover" 
