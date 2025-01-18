@@ -10,7 +10,7 @@ const RestaurantItemCard = ({itemDetails}) =>{
     }
 
     return (
-        <div className="flex m-2 p-2 border-b-2 border-gray-400">
+        <div data-testid="restaurantItemCard" className="flex m-2 p-2 border-b-2 border-gray-400">
             <div className="w-9/12 px-4">
                 <h2 className="font-semibold text-lg">{itemDetails.name}</h2>
                 <p className="font-semibold">₹ {itemDetails.defaultPrice ? itemDetails.defaultPrice/100 : itemDetails.price/100}</p>
